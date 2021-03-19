@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "myqueue",
+    "type": "java.lang.String",
+    "description": "'myqueue'란 어쩌고 저쩌고..."
+  },
+  {
+    "name": "myotherqueue",
+    "type": "java.lang.String",
+    "description": "'myotherqueue'란 어쩌고 저쩌고..."
+  }
+]}

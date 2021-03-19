@@ -1,0 +1,25 @@
+{
+  "groups": [{
+    "name": "myapp",
+    "type": "com.apress.spring.SpringBootConfigApplication$MyAppProperties",
+    "sourceType": "com.apress.spring.SpringBootConfigApplication$MyAppProperties"
+  }],
+  "properties": [
+    {
+      "name": "myapp.description",
+      "type": "java.lang.String",
+      "sourceType": "com.apress.spring.SpringBootConfigApplication$MyAppProperties"
+    },
+    {
+      "name": "myapp.name",
+      "type": "java.lang.String",
+      "sourceType": "com.apress.spring.SpringBootConfigApplication$MyAppProperties"
+    },
+    {
+      "name": "myapp.server-ip",
+      "type": "java.lang.String",
+      "sourceType": "com.apress.spring.SpringBootConfigApplication$MyAppProperties"
+    }
+  ],
+  "hints": []
+}
