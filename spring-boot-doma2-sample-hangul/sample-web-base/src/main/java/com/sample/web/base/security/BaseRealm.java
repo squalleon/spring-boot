@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 基底レルム
+ * 기저영역
  */
 @Slf4j
 public abstract class BaseRealm implements UserDetailsService {
