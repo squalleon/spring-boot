@@ -92,7 +92,7 @@ public abstract class BaseSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService)//
+        auth.userDetailsService(userDetailsService)// UserDetailService 인터페이스를 구현한 독자적인 인증 문자열(realm)을 사용한다
                 .passwordEncoder(passwordEncoder());
     }
 
@@ -112,6 +112,7 @@ public abstract class BaseSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()//
                 .and()//
                 .exceptionHandling()//
+                //세션 시간이 초과했을 때 메시지를 표시하는 AuthenticationEntryPoint를 직접 구현하고 사용하도록 설정한다
                 .authenticationEntryPoint(authenticationEntryPoint())//
                 .accessDeniedHandler(accessDeniedHandler());
 
@@ -144,7 +145,7 @@ public abstract class BaseSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 세션을 파기한다
                 .invalidateHttpSession(true).permitAll();
 
-        // RememberMe
+        // RememberMe : 자동 로그인을 위해
         http.rememberMe().key(REMEMBER_ME_KEY)//
                 .rememberMeServices(multiDeviceRememberMeServices());
     }
