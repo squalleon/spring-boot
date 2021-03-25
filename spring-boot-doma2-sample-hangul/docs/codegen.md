@@ -32,7 +32,7 @@ codegen {
 
 ```bash
 $ cd /path/to/sample-web-admin
-$ gradlew codegen -PsubSystem=system -Pfunc=employee -PfuncStr=従業員
+$ gradlew codegen -PsubSystem=system -Pfunc=employee -PfuncStr=직원
 ```
 
 ## 생성 파일의 리스트
