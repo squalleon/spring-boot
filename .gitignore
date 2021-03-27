@@ -5,3 +5,5 @@
 *.ear
 
 .idea/
+.github/
+.gradle/
