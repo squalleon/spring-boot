@@ -1,0 +1,163 @@
+인텔리제이, JPA, JUnit 테스트, 그레이들, 소셜 로그인, AWS 인프라로 무중단 배포까지
+
+스프링 부트와 AWS로 혼자 구현하는 웹 서비스
+
+이동욱 지음
+
+프리렉
+
+예제 코드 내려받기
+http://bit.ly/fr-springboot
+https://github.com/jojoldu/freelec-springboot2-webservice
+
+### CH01 : 인텔맂이로 스프링 부트 시작하기
+New Project > Gradle, Java 1.8 
+freelec-springboot2-webservice
+
+Artifact Coordinates
+GroupId: com.jojoldu.book
+ArtifactId: freelec-springboot2-webservice
+Version: 1.0-SNAPSHOT
+
+build.gradle 수정
+
+'''
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.jojoldu.book'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+'''
+
+------------------------------------------------------------
+### CH02 스프링 부트에서 테스트 코드를 작성하자
+
+TDD vs 단위테스트
+
+- 항상 실패하는 테스트를 먼저 작성 (Red)
+- 테스트가 통과하는 프로덕션 코드를 작성 (Green)
+- 테스트가 통과하면 프로덕션 코드를 리팩토링 (Refactor)
+
+TDD 실천법과 도구 공개 PDF
+https://repo.yona.io/doortts/blog/issue/1
+
+TDD가 아닌 단위테스트
+
+JUnit5까지 나왔는데 JUnit4 사용
+
+Hello Controller 테스트 코드 작성하기
+
+java > package 추가 :
+com.jojoldu.book.springboot
+  Application.java
+com.jojoldu.book.springboot.web
+  HelloController.java
+
+test/java/
+com.jojoldu.book.springboot.web
+  HelloControllerTest.java
+
+Plugin : lombok 추가 Annotation Processing 체크
+
+
+com.jojoldu.book.springboot.web.dto
+  HelloResponseDto.java
+
+assertj의 장점에 대한 자세한 설명은 백기선님의 유튜브 'assertJ가 JUnit의 assertThat 보다 편리한 이유'를 
+참고하면 좋습니다.(http://bit.ly/30vm9Lg)
+
+AssertJ Core features highlight
+https://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html
+
+
+컴파일 오류시 gradle/wrapper/gradle-wrapper.properties
+
+그레이들 버전 맞추기 : Terminal
+gradlew wrapper --gradle-version 4.10.2
+
+
+
+
+
+
+------------------------------------------------------------
+### CH03 스프링 부트에서 JPA로 데이터베이스 다뤄보자
+
+
+
+------------------------------------------------------------
+### CH04 머스테치로 화면 구성하기
+
+
+
+------------------------------------------------------------
+### CH05 스프링 시큐리티와 OAuth 2.0으로 로그인 기능 구현하기
+
+------------------------------------------------------------
+### CH06 AWS 서버 환경을 만들어보자 - AWS EC2
+
+------------------------------------------------------------
+### CH07 AWS에 데이터베이스 환경을 만들어보자 - AWS RDS
+
+
+------------------------------------------------------------
+### CH08 EC2 서버에 프로젝트를 배포해 보자
+
+------------------------------------------------------------
+### CH09 코드가 푸시되면 자동으로 배포해 보자 - Travis CI 배포 자동화
+
+------------------------------------------------------------
+### CH10 24시간 365일 중단 없는 서비스 만들자
+
+------------------------------------------------------------
+### CH11 1인 개발시 도움이 될 도구와 조언들
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+### CH0
+
+------------------------------------------------------------
+
+------------------------------------------------------------
