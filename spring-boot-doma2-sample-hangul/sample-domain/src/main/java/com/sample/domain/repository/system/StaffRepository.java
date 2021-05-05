@@ -62,7 +62,7 @@ public class StaffRepository extends BaseRepository {
      * @return
      */
     public Staff findById(final Long id) {
-        return staffDao.selectById(id).orElseThrow(() -> new NoDataFoundException("staff_id=" + id + " のデータが見つかりません。"));
+        return staffDao.selectById(id).orElseThrow(() -> new NoDataFoundException("staff_id=" + id + " 데이터가 없습니다。"));
     }
 
     /**

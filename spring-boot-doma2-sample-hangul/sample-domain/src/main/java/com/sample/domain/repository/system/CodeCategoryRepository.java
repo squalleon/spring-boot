@@ -84,7 +84,7 @@ public class CodeCategoryRepository extends BaseRepository {
     public CodeCategory findById(final Long id) {
         // 1건 취득
         return codeCategoryDao.selectById(id)
-                .orElseThrow(() -> new NoDataFoundException("codeCategory_id=" + id + " のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("codeCategory_id=" + id + " 데이터가 없습니다。"));
     }
 
     /**
@@ -118,7 +118,7 @@ public class CodeCategoryRepository extends BaseRepository {
         int updated = codeCategoryDao.update(inputCodeCategory);
 
         if (updated < 1) {
-            throw new NoDataFoundException("codeCategory_id=" + inputCodeCategory.getId() + " のデータが見つかりません。");
+            throw new NoDataFoundException("codeCategory_id=" + inputCodeCategory.getId() + " 데이터가 없습니다。");
         }
 
         return inputCodeCategory;

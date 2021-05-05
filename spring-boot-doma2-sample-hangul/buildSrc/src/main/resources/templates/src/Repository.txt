@@ -60,7 +60,7 @@ public class [[${upperFuncName}]]Repository extends BaseRepository {
     public [[${upperFuncName}]] findById(final Long id) {
         // 1件取得
         return [[${lowerFuncName}]]Dao.selectById(id)
-                .orElseThrow(() -> new NoDataFoundException("[[${lowerFuncName}]]_id=" + id + " のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("[[${lowerFuncName}]]_id=" + id + " 데이터가 없습니다。"));
     }
 
     /**
@@ -87,7 +87,7 @@ public class [[${upperFuncName}]]Repository extends BaseRepository {
         int updated = [[${lowerFuncName}]]Dao.update(input[[${upperFuncName}]]);
 
         if (updated < 1) {
-            throw new NoDataFoundException("[[${lowerFuncName}]]_id=" + input[[${upperFuncName}]].getId() + " のデータが見つかりません。");
+            throw new NoDataFoundException("[[${lowerFuncName}]]_id=" + input[[${upperFuncName}]].getId() + " 데이터가 없습니다。");
         }
 
         return input[[${upperFuncName}]];
@@ -100,7 +100,7 @@ public class [[${upperFuncName}]]Repository extends BaseRepository {
      */
     public [[${upperFuncName}]] delete(final Long id) {
         val [[${lowerFuncName}]] = [[${lowerFuncName}]]Dao.selectById(id)
-                .orElseThrow(() -> new NoDataFoundException("[[${lowerFuncName}]]_id=" + id + " のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("[[${lowerFuncName}]]_id=" + id + " 데이터가 없습니다。"));
 
         int updated = [[${lowerFuncName}]]Dao.delete([[${lowerFuncName}]]);
 

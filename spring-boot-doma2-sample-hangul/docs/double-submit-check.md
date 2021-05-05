@@ -115,7 +115,7 @@ public class DefaultEntityListener<ENTITY> implements EntityListener<ENTITY> {
 }
 ```
 
-* `HtmlExceptionHandler`で`DoubleSubmitErrorException`를 핸들링한다.
+* `HtmlExceptionHandler`로 `DoubleSubmitErrorException`를 핸들링한다.
     - 이중송신을 감지했다는 메시지를 FlashMap에 설정하여, 원래의 화면으로 리다이렉트한다.
 
 ```java

@@ -100,7 +100,7 @@ public class CodeRepository extends BaseRepository {
     @Cacheable(cacheNames = "code", key = "#id")
     public Code findById(final Long id) {
         // 1건 취득
-        return codeDao.selectById(id).orElseThrow(() -> new NoDataFoundException("code_id=" + id + " のデータが見つかりません。"));
+        return codeDao.selectById(id).orElseThrow(() -> new NoDataFoundException("code_id=" + id + " 데이터가 없습니다。"));
     }
 
     /**

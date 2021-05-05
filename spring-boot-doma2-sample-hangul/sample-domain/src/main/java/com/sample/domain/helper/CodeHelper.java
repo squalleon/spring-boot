@@ -44,6 +44,6 @@ public class CodeHelper {
      */
     public Code getCode(String categoryKey, String codeKey) {
         return codeRepository.findByCodeKey(categoryKey, codeKey)
-                .orElseThrow(() -> new NoDataFoundException("codeKey=" + codeKey + "のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("codeKey=" + codeKey + "데이터가 없습니다。"));
     }
 }

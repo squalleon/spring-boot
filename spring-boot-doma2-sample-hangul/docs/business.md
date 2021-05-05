@@ -9,7 +9,7 @@
 
 ```java
 @Service
-public class UserService extends BaseTransactionalService { // ★親クラスで@Transactionalを宣言済み
+public class UserService extends BaseTransactionalService { // ★부모 클래스에서 @Transactional 선언 된
 
     @Autowired
     UserDao userDao;
@@ -50,7 +50,7 @@ public class UserService extends BaseTransactionalService { // ★親クラス�
         Assert.notNull(where, "where must not be null");
 
         // 페이징을 지정한다
-        val options = createSearchOptions(pageable).count(); // ★Pageableを元にDoma2のSelectOptionsを作成する
+        val options = createSearchOptions(pageable).count(); // ★Pageable를 바탕으로 Doma2의 SelectOptions 를 만듦
         val users = userDao.selectAll(where, options, toList());
 
         // ★SelectOptions의 count메소드를 호출하면, 건수 취득과 레코드 취득이 하나의 SQL로 이루어질 수 있다

@@ -11,7 +11,7 @@ import com.sample.domain.dto.common.ID;
 import lombok.val;
 
 /**
- * ModelMapperのファクトリ
+ * ModelMapper 팩토리
  */
 public class DefaultModelMapperFactory {
 
@@ -21,23 +21,23 @@ public class DefaultModelMapperFactory {
      * @return
      */
     public static ModelMapper create() {
-        // ObjectMappingのためのマッパー
+        // ObjectMapping 위한 매퍼
         val modelMapper = new ModelMapper();
         val configuration = modelMapper.getConfiguration();
 
         configuration.setPropertyCondition(
-                // IDフィールド以外をマッピングする
+                // ID 필드 이외 매핑
                 context -> {
-                    // DomaDtoのIDカラムは上書きしないようにする
+                    // DomaDto 의 ID 컬럼은 덮어 쓰지 않도록 한다.
                     PropertyInfo propertyInfo = context.getMapping().getLastDestinationProperty();
                     return !(context.getParent().getDestination() instanceof DomaDto
                             && propertyInfo.getName().equals("id"));
                 });
 
-        // 厳格にマッピングする
+        // 엄격하게 매핑
         configuration.setMatchingStrategy(MatchingStrategies.STRICT);
 
-        // コンバーター
+        // 변환기
         val idToInt = new AbstractConverter<ID<?>, Integer>() {
             @Override
             protected Integer convert(ID<?> source) {

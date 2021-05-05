@@ -87,7 +87,7 @@ public class MailTemplateRepository extends BaseRepository {
         int updated = mailTemplateDao.update(inputMailTemplate);
 
         if (updated < 1) {
-            throw new NoDataFoundException("mailTemplate_id=" + inputMailTemplate.getId() + " のデータが見つかりません。");
+            throw new NoDataFoundException("mailTemplate_id=" + inputMailTemplate.getId() + " 데이터가 없습니다。");
         }
 
         return inputMailTemplate;

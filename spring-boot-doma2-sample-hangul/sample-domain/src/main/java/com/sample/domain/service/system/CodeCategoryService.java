@@ -76,7 +76,7 @@ public class CodeCategoryService extends BaseTransactionalService {
 
         // 1件取得
         return codeCategoryRepository.findOne(criteria)
-                .orElseThrow(() -> new NoDataFoundException("category_key=" + categoryKey + " のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("category_key=" + categoryKey + " 데이터가 없습니다。"));
     }
 
     /**

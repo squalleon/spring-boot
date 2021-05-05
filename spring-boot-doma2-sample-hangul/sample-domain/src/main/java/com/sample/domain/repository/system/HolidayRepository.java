@@ -60,7 +60,7 @@ public class HolidayRepository extends BaseRepository {
     public Holiday findById(final Long id) {
         // 1건 취득
         return holidayDao.selectById(id)
-                .orElseThrow(() -> new NoDataFoundException("holiday_id=" + id + " のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("holiday_id=" + id + " 데이터가 없습니다。"));
     }
 
     /**
@@ -100,7 +100,7 @@ public class HolidayRepository extends BaseRepository {
      */
     public Holiday delete(final Long id) {
         val holiday = holidayDao.selectById(id)
-                .orElseThrow(() -> new NoDataFoundException("holiday_id=" + id + " のデータが見つかりません。"));
+                .orElseThrow(() -> new NoDataFoundException("holiday_id=" + id + " 데이터가 없습니다。"));
 
         int updated = holidayDao.delete(holiday);
 

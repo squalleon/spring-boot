@@ -97,7 +97,7 @@ public class [[${upperFuncName}]]HtmlController extends AbstractHtmlController {
             return "redirect:/[[${subSystem}]]/[[${lowerFuncName}]]s/new";
         }
 
-        // 入力値からDTOを作成する
+        // 入力値からDTO를 만듦
         val input[[${upperFuncName}]] = modelMapper.map(form, [[${upperFuncName}]].class);
 
         // 登録する
