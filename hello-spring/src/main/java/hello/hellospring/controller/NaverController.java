@@ -44,16 +44,17 @@ public class NaverController {
 //http://localhost:8080/auth/naver/callback?code=MuUL6hlXCIUt25zgEl&state=1295540687490528991210698014294887520753
         ResponseEntity<?> responseEntity = naverService.requestAccessToken(code, state);
 
-        Object responseMessage = responseEntity.getBody();
+//        Object responseMessage = responseEntity.getBody();
+        Map map = (Map) responseEntity.getBody();
 
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             // 자바 객체로 변환
             // 레파지토리에 객체 저장
-            Map map = (Map) responseMessage;
-            System.out.println("access_token = " + map.get("access_token"));
-            System.out.println("refresh_token = " + map.get("refresh_token"));
-            System.out.println("token_type = " + map.get("token_type"));
-            System.out.println("expires_in = " + map.get("expires_in"));
+//            Map map = (Map) responseMessage;
+//            System.out.println("access_token = " + map.get("access_token"));
+//            System.out.println("refresh_token = " + map.get("refresh_token"));
+//            System.out.println("token_type = " + map.get("token_type"));
+//            System.out.println("expires_in = " + map.get("expires_in"));
 
             // 방법1 : RestTemplate().exchange
             ResponseEntity<?> responseEntity2 = naverService.getUserProfile1((String) map.get("access_token"));
