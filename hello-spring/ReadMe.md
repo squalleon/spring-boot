@@ -41,8 +41,9 @@ A-->E(도메인)
 B-->E
 C-->E
 ```
-https://mermaid-js.github.io/mermaid/#/
+> https://mermaid-js.github.io/mermaid/#/
 
+### hello 프로젝트 구성
 - 컨트롤러: 웹 MVC의 컨트롤러 역할
 - 서비스: 핵심 비즈니스 로직 구현
 - 리포지토리: 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리

@@ -17,7 +17,7 @@ spring:
     enable: true
     baseline-on-migrate: true
 doma:
-  # SQL파일을 캐ㅐ시하지 않는다
+  # SQL파일을 캐시하지 않는다
   sql-file-repository: no_cache
 logging:
   level:

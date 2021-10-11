@@ -6,13 +6,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class HelloController {
 
     @GetMapping("hello")
-    public String hello(Model model) {
+    public String hello(HttpServletRequest request, Model model) {
         model.addAttribute("data", "hello!!!");
+        model.addAttribute("sessionId", "test111");
+        request.getSession().setAttribute("data", "hello!!!");
         return "hello";
+    }
+
+    @GetMapping("main")
+    public String main(HttpServletRequest request, Model model) {
+//        model.addAttribute("data", "hello!!!");
+//        request.getSession().setAttribute("data", "hello!!!");
+        return "main";
     }
 
     @GetMapping("hello-mvc")
