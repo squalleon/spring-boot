@@ -75,7 +75,7 @@ public class NaverController {
 //            JSONParser parser = new JSONParser(rtnData);
 //            Object obj = parser.parse();
 
-            return "hello";
+            return "main";
         } else {
             // 응답 에러 처리
             return "error";

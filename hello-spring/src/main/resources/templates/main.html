@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="${data}">메인화면</p>
+<h2>메인화면</h2>
+<p th:text="'안녕하세요. ' + ${data.response.nickname} + '입니다.'" ></p>
+<p th:text="'토큰 : ' + ${map.access_token}" ></p>
+<p th:text="'세션 : ' + ${sessionId}" ></p>
 </body>
 </html>
