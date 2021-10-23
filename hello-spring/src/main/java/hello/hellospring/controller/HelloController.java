@@ -1,5 +1,6 @@
 package hello.hellospring.controller;
 
+import hello.hellospring.util.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,15 +8,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 public class HelloController {
 
     @GetMapping("hello")
-    public String hello(HttpServletRequest request, Model model) {
+    public String hello(HttpServletRequest request, Model model) throws NoSuchAlgorithmException {
         model.addAttribute("data", "hello!!!");
         model.addAttribute("sessionId", "test111");
         request.getSession().setAttribute("data", "hello!!!");
+
+//        for (int i = 0; i < 20; i++) {
+//            System.out.println("uuid = " + StringUtil.getUUID());
+//        }
+//        System.out.println("RandomString = " + StringUtil.getRandomString());
+        String pwd = "안녕하세요. 자바!!!";
+        String result = StringUtil.sha256(pwd);
+        System.out.println("sha256 = " + result);
+        System.out.println("result = " + result.equals(StringUtil.sha256(pwd)));
+
+        StringUtil.chainCheck("PEMDATA");
+
         return "hello";
     }
 
