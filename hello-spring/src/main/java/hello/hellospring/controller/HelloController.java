@@ -28,7 +28,7 @@ public class HelloController {
         System.out.println("sha256 = " + result);
         System.out.println("result = " + result.equals(StringUtil.sha256(pwd)));
 
-        StringUtil.chainCheck("PEMDATA");
+        StringUtil.chainCheck();
 
         return "hello";
     }
