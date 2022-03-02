@@ -28,6 +28,7 @@
 <script type="text/javascript">
     $.get("/user", function(data) {
         console.log("data=" + JSON.stringify(data));
+        debugger;
         $("#user").html(data.login);
         $(".unauthenticated").hide()
         $(".authenticated").show()

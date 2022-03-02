@@ -1,6 +1,7 @@
 package hello.hellospring.controller;
 
 import hello.hellospring.util.StringUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,10 +9,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.sql.DataSource;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @Controller
 public class HelloController {
+
+//    @Autowired
+//    DataSource dataSource;
 
     @GetMapping("hello")
     public String hello(HttpServletRequest request, Model model) throws NoSuchAlgorithmException {
@@ -70,6 +77,16 @@ public class HelloController {
         public void setName(String name) {
             this.name = name;
         }
+    }
+
+    @GetMapping("checkH2DB")
+    public String checkH2DB(HttpServletRequest request) throws SQLException {
+
+//        Connection connection = dataSource.getConnection();
+//        System.out.println(connection.getMetaData().getURL());
+//        System.out.println(connection.getMetaData().getUserName());
+
+        return "";
     }
 
 }

@@ -63,6 +63,12 @@ public class NaverService {
         return rtn;
     }
 
+    /**
+     * code, state, client_id, client_secret, grant_type 값으로 access_token 값 가져오기
+     * @param code
+     * @param state
+     * @return
+     */
     public ResponseEntity<Map> requestAccessToken(String code, String state) {
 
         MultiValueMap<String, String> requestBody = new LinkedMultiValueMap<>();
@@ -81,6 +87,11 @@ public class NaverService {
         return new RestTemplate().exchange(NAVER_TOKEN_BASE_URL, HttpMethod.POST, requestParam, Map.class);
     }
 
+    /**
+     * access_token 값으로 네이버 프로파일 가져오기
+     * @param accessToken
+     * @return
+     */
     public ResponseEntity<Map> getUserProfile1(String accessToken) {
 
         HttpHeaders headers = new HttpHeaders();
